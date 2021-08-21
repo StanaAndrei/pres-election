@@ -1,0 +1,27 @@
+header {
+	background-color: rgb(100, 100, 100);
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
+
+td {
+	padding-right: 1400px;
+}
+
+td > a {
+	user-select: none;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	font-size: x-large;
+}
+
+td > a[href = ''] {
+	pointer-events: none;
+	cursor: default;
+}
+
+#logout {
+	width: 90px;
+}

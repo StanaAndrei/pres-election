@@ -1,0 +1,8 @@
+.candidate-view {
+	width: 300px;
+	height: 100px;
+	border: 1px solid blue;
+    text-align: center;
+    padding: 30px;
+    margin: auto;
+}
