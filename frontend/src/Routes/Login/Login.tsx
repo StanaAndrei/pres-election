@@ -1,23 +1,7 @@
-import { LOCAL_STORAGE_KEYS } from "../../constants";
 import React from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
 import User from "../../Schemas/User";
-const loginURL: string = "http://localhost:8080/login";
-
-const loginUser = (name: string, password: string): void => {
-    axios.post(loginURL, {
-        name, password
-    }).then(res => {
-        window.localStorage.setItem(LOCAL_STORAGE_KEYS.NAME, name);
-        window.localStorage.setItem(LOCAL_STORAGE_KEYS.PASSWORD, password);
-        window.location.assign('/');
-    }, err => {
-        alert('login failed!');
-        console.error(err);
-    })
-}
 
 export default function Login(): React.ReactElement {
     let nameInpRef = React.createRef<HTMLInputElement>();
@@ -34,7 +18,7 @@ export default function Login(): React.ReactElement {
         e.preventDefault();
         let { value: name } = nameInpRef.current!;
         let { value: password } = passInpRef.current!;
-        loginUser(name, password);
+        User.login(name, password);
     }
 
     return (

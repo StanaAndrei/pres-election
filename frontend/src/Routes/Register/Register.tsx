@@ -1,24 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
-const registerURL: String = "http://localhost:8080/register";
-
-const registerUser = (name: String, password: String): void => {
-    console.log('in reg')
-    axios.post(registerURL as string, {
-        name, password
-    }).then(
-        res => {
-            alert('Registered with success! You will be redirected to login!');
-            window.location.href = 'http://localhost:3000/login';
-        },
-        err => {
-            alert('Register failed!')
-            console.error(err);
-        }
-    );
-};
+import User from "../../Schemas/User";
 
 export default function Register(): React.ReactElement {
     let nameInpRef = React.createRef<HTMLInputElement>();
@@ -39,7 +22,7 @@ export default function Register(): React.ReactElement {
             alert("Passwords don't match!");
             return;
         }
-        registerUser(name, password);
+        User.register(name, password);
     }
 
     return (

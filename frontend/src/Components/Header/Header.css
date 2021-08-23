@@ -6,8 +6,10 @@ header {
 	color: white;
 }
 
-td {
-	padding-right: 1400px;
+#user-log {
+	padding: 15px;
+	float: left;
+	margin: auto;
 }
 
 td > a {

@@ -52,12 +52,12 @@ export default function Header(): React.ReactElement {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </td>
-                        <td>
+                        <td id="user-log">
                             <a href={anchorData.href}
                             >
                                 {anchorData.value}
                             </a>
-                            <Button onClick={logOutBtnClick} id="logout" style={{ display: displayLOBtn ? 'block' : 'none' }} >log-out</Button>
+                            <Button onClick={logOutBtnClick} id="logout" style={{ display: displayLOBtn ? 'inline' : 'none' }} >log-out</Button>
                         </td>
                     </tr>
                 </tbody>
