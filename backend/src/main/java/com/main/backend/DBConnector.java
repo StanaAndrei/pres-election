@@ -14,4 +14,13 @@ public class DBConnector {
         Connection con = DriverManager.getConnection(url, props);
         return con;
     }
+    static Connection getConTOHost() throws Exception {
+        final String url = "jdbc:postgresql://localhost/";
+        var props = new Properties();
+        props.setProperty("user", "postgres");
+        props.setProperty("password", "postgres_password");
+        props.setProperty("ssl", "allow");
+        Connection con = DriverManager.getConnection(url, props);
+        return con;
+    }
 }

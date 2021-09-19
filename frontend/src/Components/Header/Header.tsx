@@ -49,6 +49,7 @@ export default function Header(): React.ReactElement {
                                 <Dropdown.Menu>
                                     <Dropdown.Item href="/">home</Dropdown.Item>
                                     <Dropdown.Item href="/vote">vote</Dropdown.Item>
+                                    <Dropdown.Item href="/history">history</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </td>

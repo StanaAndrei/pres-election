@@ -1,14 +1,16 @@
 package com.main.backend;
 
 public class User {
-    private String name, password;
-    public User(String name, String password) {
-        this.name = name;
+    private String username, password;
+    public User() {}
+
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {

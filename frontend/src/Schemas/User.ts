@@ -2,35 +2,35 @@ import { LOCAL_STORAGE_KEYS } from "../constants";
 import axios from "axios";
 
 export default class User {
-    static register(name: String, password: String): void {
-        const registerURL: String = "http://localhost:8080/register";
-        console.log('in reg')
-        axios.post(registerURL as string, {
-            name, password
-        }).then(
-            res => {
-                alert('Registered with success! You will be redirected to login!');
-                window.location.href = '/login';
-            },
-            err => {
-                alert('Register failed!')
-                console.error(err);
-            }
-        );
+    static async register(name: String, password: String): Promise<boolean> {
+        const registerURL: string = "http://localhost:8080/register";
+        let ok: boolean;
+        try {
+            await axios.post(registerURL, {
+                username: name, password
+            });
+            ok = true;
+        } catch (e) {
+            ok = false;
+        }
+        return ok;
     };
 
-    static login (name: string, password: string): void {
+    static async login (name: string, password: string): Promise<boolean> {
         const loginURL: string = "http://localhost:8080/login";
-        axios.post(loginURL, {
-            name, password
-        }).then(res => {
+        let ok: boolean;
+        try {
+            await axios.post(loginURL, {
+                username: name, password
+            });
+            ok = true;
             window.localStorage.setItem(LOCAL_STORAGE_KEYS.NAME, name);
             window.localStorage.setItem(LOCAL_STORAGE_KEYS.PASSWORD, password);
-            window.location.assign('/');
-        }, err => {
-            alert('login failed!');
-            console.error(err);
-        })
+        } catch(e) {
+            ok = false;
+            console.error(e);
+        }   
+        return ok;
     }
 
     static isLoggedIn(): boolean {

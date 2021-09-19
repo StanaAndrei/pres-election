@@ -51,7 +51,7 @@ export default function Home(): React.ReactElement {
             window.location.reload();
         }, err => {
             console.error(err);
-            alert('process failed!');
+            setCandStatus('process failed!');
         })
     }
 

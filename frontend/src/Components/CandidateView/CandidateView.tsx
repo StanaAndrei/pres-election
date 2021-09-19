@@ -9,24 +9,19 @@ interface CandidateData {
 }
 
 export default function CandidateView({name}: CandidateData): React.ReactElement {
-    const addVoteURL: string = `http://localhost:8080/add-vote/${name}`;
-    const setHasVotedURL: string = `http://localhost:8080/set-voted/${User.getName()}`;
+    const addVoteURL: string = `http://localhost:8080/add-vote`;
 
     const handleVoteBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
         e.preventDefault();
-        axios.put(addVoteURL).then(res => {
+        axios.put(addVoteURL, {
+            votedUser: name,
+            userWhoVoted: User.getName()
+        }).then(res => {
             window.location.assign('/');
         }, err => {
             console.error(err);
             alert('failed to add vote!');
         })
-
-        axios.put(setHasVotedURL).then(res => {
-            //ok
-        }, err => {
-            console.error(err);
-            alert('smth went wrong!');
-        });
     }
 
     return (
