@@ -1,11 +1,11 @@
-package com.main.backend;
+package com.main.backend.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
 public class DBConnector {
-    static Connection getCon() throws Exception {
+    public static Connection getCon() throws Exception {
         final String url = "jdbc:postgresql://localhost/electionsdb";
         var props = new Properties();
         props.setProperty("user", "postgres");
@@ -14,7 +14,7 @@ public class DBConnector {
         Connection con = DriverManager.getConnection(url, props);
         return con;
     }
-    static Connection getConTOHost() throws Exception {
+    public static Connection getConTOHost() throws Exception {
         final String url = "jdbc:postgresql://localhost/";
         var props = new Properties();
         props.setProperty("user", "postgres");

@@ -1,4 +1,6 @@
-package com.main.backend;
+package com.main.backend.util;
+
+import com.main.backend.BackendApplication;
 
 public class TimeManager {
     public static String getElectionUnit() {

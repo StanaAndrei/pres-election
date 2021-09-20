@@ -1,5 +1,8 @@
-package com.main.backend;
+package com.main.backend.controllers;
 
+import com.main.backend.BackendApplication;
+import com.main.backend.util.DBConnector;
+import com.main.backend.util.TimeManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
@@ -7,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.ResultSet;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.*;
 

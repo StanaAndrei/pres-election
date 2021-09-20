@@ -1,4 +1,4 @@
-package com.main.backend;
+package com.main.backend.models;
 
 public class User {
     private String username, password;

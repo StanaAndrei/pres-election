@@ -1,14 +1,8 @@
 package com.main.backend;
 
+import com.main.backend.config.Initializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Timer;
 
 @SpringBootApplication
 public class BackendApplication {

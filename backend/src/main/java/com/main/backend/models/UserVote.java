@@ -1,4 +1,4 @@
-package com.main.backend;
+package com.main.backend.models;
 
 public class UserVote {
     private String votedUser, userWhoVoted;

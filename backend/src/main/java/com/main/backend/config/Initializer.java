@@ -1,5 +1,6 @@
-package com.main.backend;
+package com.main.backend.config;
 
+import com.main.backend.util.DBConnector;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import java.io.*;
 import java.sql.ResultSet;

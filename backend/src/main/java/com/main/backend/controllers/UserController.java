@@ -1,5 +1,7 @@
-package com.main.backend;
+package com.main.backend.controllers;
 
+import com.main.backend.models.User;
+import com.main.backend.util.DBConnector;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
