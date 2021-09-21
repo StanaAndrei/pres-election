@@ -3,8 +3,9 @@ import React from "react";
 import CandidateView from "../../Components/CandidateView/CandidateView";
 import User from "../../Schemas/User";
 import { v4 as uuidv4 } from 'uuid';
-const candidatesURL: string = "http://localhost:8080/candidates";
-const checkVoteURL: string = `http://localhost:8080/check-vote/${User.getName()}`;
+import globalVars from "../../globalVars";
+const candidatesURL: string = globalVars.API_DOMAIN + "/candidates";
+const checkVoteURL: string = globalVars.API_DOMAIN + `/check-vote/${User.getName()}`;
 
 export default function Vote(): React.ReactElement | null {
     const [hasVoted, setHasVoted] = React.useState<boolean | null>(null);

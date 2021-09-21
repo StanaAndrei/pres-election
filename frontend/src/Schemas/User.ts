@@ -1,9 +1,10 @@
 import { LOCAL_STORAGE_KEYS } from "../constants";
 import axios from "axios";
+import globalVars from "../globalVars";
 
 export default class User {
     static async register(name: String, password: String): Promise<boolean> {
-        const registerURL: string = "http://localhost:8080/register";
+        const registerURL: string = globalVars.API_DOMAIN + "/register";
         let ok: boolean;
         try {
             await axios.post(registerURL, {
@@ -17,7 +18,7 @@ export default class User {
     };
 
     static async login (name: string, password: string): Promise<boolean> {
-        const loginURL: string = "http://localhost:8080/login";
+        const loginURL: string = globalVars.API_DOMAIN + "/login";
         let ok: boolean;
         try {
             await axios.post(loginURL, {

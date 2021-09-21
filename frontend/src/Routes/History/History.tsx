@@ -2,8 +2,9 @@ import axios from "axios";
 import React from "react";
 import ElectionStatsView from "../../Components/ElectionStatsView/ElectionStatsView";
 import { v4 as uuidv4 } from 'uuid';
+import globalVars from "../../globalVars";
 
-const historyURL = 'http://localhost:8080/history';
+const historyURL = globalVars.API_DOMAIN + '/history';
 
 interface ElectionStats {
     date: string,

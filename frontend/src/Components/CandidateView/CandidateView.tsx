@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
+import globalVars from "../../globalVars";
 import User from "../../Schemas/User";
 import "./CandidateView.css";
 
@@ -9,7 +10,7 @@ interface CandidateData {
 }
 
 export default function CandidateView({name}: CandidateData): React.ReactElement {
-    const addVoteURL: string = `http://localhost:8080/add-vote`;
+    const addVoteURL: string = globalVars.API_DOMAIN + '/add-vote';
 
     const handleVoteBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
         e.preventDefault();

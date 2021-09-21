@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
+import globalVars from "../../globalVars";
 import User from "../../Schemas/User";
-const checkPresidentURL: string = 'http://localhost:8080/president';
+const checkPresidentURL: string = globalVars.API_DOMAIN + '/president';
 const name: string | null = User.getName();
-const isCandidateURL: string = `http://localhost:8080/is-candidate/${name}`;
-const setCandURL: string = `http://localhost:8080/set-candidate/${name}`;
+const isCandidateURL: string = globalVars.API_DOMAIN + `/is-candidate/${name}`;
+const setCandURL: string = globalVars.API_DOMAIN + `/set-candidate/${name}`;
 
 export default function Home(): React.ReactElement {
     const [status, setStatus] = React.useState<string>('');
