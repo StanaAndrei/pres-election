@@ -4,7 +4,7 @@ import ElectionStatsView from "../../Components/ElectionStatsView/ElectionStatsV
 import { v4 as uuidv4 } from 'uuid';
 import globalVars from "../../globalVars";
 
-const historyURL = globalVars.API_DOMAIN + '/history';
+const historyURL = globalVars.API_DOMAIN + '/election-stats/history';
 
 interface ElectionStats {
     date: string,

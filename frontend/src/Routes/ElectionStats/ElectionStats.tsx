@@ -3,7 +3,7 @@ import React from "react";
 import Modal from "../../Components/Modal/Modal";
 import globalVars from "../../globalVars";
 const winSrc: string = window.location.search;
-const eleStatsURL = globalVars.API_DOMAIN + '/election-stats' + winSrc;
+const eleStatsURL = globalVars.API_DOMAIN + '/election-stats/stats' + winSrc;
 
 export default function ElectionStats(): React.ReactElement {
     const [modalShow, setModalShow] = React.useState<boolean>(false);

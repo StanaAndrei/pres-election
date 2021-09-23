@@ -3,10 +3,10 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import globalVars from "../../globalVars";
 import User from "../../Schemas/User";
-const checkPresidentURL: string = globalVars.API_DOMAIN + '/president';
+const checkPresidentURL: string = globalVars.API_DOMAIN + '/user-vote/president';
 const name: string | null = User.getName();
-const isCandidateURL: string = globalVars.API_DOMAIN + `/is-candidate/${name}`;
-const setCandURL: string = globalVars.API_DOMAIN + `/set-candidate/${name}`;
+const isCandidateURL: string = globalVars.API_DOMAIN + `/election/${name}/is-candidate`;
+const setCandURL: string = globalVars.API_DOMAIN + `/election/${name}/set-candidate`;
 
 export default function Home(): React.ReactElement {
     const [status, setStatus] = React.useState<string>('');

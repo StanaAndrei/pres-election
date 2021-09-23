@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping(value = "/election")
 public class ElectionController {
 
     //return candidates at curr election
@@ -28,7 +29,7 @@ public class ElectionController {
         return ans;
     }
 
-    @RequestMapping(value = "/is-candidate/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}/is-candidate", method = RequestMethod.GET)
     public static Boolean isCandidante(@PathVariable String name) throws Exception {
         String eleUnit = TimeManager.getElectionUnit();
         String query = "SELECT COUNT(*)=1 FROM elections WHERE " +
@@ -43,7 +44,7 @@ public class ElectionController {
         return false;
     }
 
-    @RequestMapping(value = "/set-candidate/{name}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{name}/set-candidate", method = RequestMethod.PUT)
     private ResponseEntity<Void> setCandidate(@PathVariable String name) throws Exception {
         var stmt = DBConnector.getCon().createStatement();
         {

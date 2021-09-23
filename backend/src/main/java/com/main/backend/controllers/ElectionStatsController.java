@@ -14,10 +14,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
+@RequestMapping(value = "/election-stats")
 public class ElectionStatsController {
     final static String eleUnit = TimeManager.getElectionUnit();
 
-    @RequestMapping(value = "/election-stats", method = RequestMethod.GET)
+    @RequestMapping(value = "/stats", method = RequestMethod.GET)
     private static ResponseEntity<String> getEleStats(
             @RequestParam(name = "year", required = false, defaultValue = "") String year,
             @RequestParam(name = "month", required = false, defaultValue = "") String month,
@@ -105,8 +106,10 @@ public class ElectionStatsController {
 
     @RequestMapping(value = "/history", method = RequestMethod.GET)
     private ResponseEntity<String> getHistory() throws Exception {
-        String query = "SELECT DATE_TRUNC('%s', election_date) FROM elections ORDER BY election_date DESC;";
-        query = String.format(query, eleUnit);
+        String query = "SELECT DATE_TRUNC('%s', election_date) FROM elections " +
+                "WHERE DATE_TRUNC('%s', election_date)!=DATE_TRUNC('%s', NOW()) " +
+                "ORDER BY election_date DESC;";
+        query = String.format(query, eleUnit, eleUnit, eleUnit);
         var stmt = DBConnector.getCon().createStatement();
         ResultSet resultSet = stmt.executeQuery(query);
         final var jsonArray = new JSONArray();
@@ -123,7 +126,6 @@ public class ElectionStatsController {
             jsonObject.put("election-nr", nr);
             jsonArray.put(jsonObject);
         }
-
         return new ResponseEntity<>(jsonArray.toString(), HttpStatus.OK);
     }
 }

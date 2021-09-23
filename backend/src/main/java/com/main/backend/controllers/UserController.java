@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.*;
 
 @RestController
+@RequestMapping(value = "/user")
 public class UserController {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)

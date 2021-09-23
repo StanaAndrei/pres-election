@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @RestController
+@RequestMapping(value = "/user-vote")
 public class UserVoteController {
 
     @RequestMapping(value = "/add-vote", method = RequestMethod.PUT)
@@ -44,7 +45,7 @@ public class UserVoteController {
         return president;
     }
 
-    @RequestMapping(value = "/check-vote/{userWhoVoted}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{userWhoVoted}/check-vote", method = RequestMethod.GET)
     private static Boolean hasVoted(@PathVariable String userWhoVoted) throws Exception {
         var stmt = DBConnector.getCon().createStatement();
         {
@@ -82,7 +83,7 @@ public class UserVoteController {
         return false;
     }
 
-    @RequestMapping(value = "/is-president/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}/is-president", method = RequestMethod.GET)
     private Boolean isPresident(@PathVariable String name) throws Exception {
         return getPresident().equals(name);
     }
