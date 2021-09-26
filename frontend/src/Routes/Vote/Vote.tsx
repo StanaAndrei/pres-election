@@ -5,7 +5,7 @@ import User from "../../Schemas/User";
 import { v4 as uuidv4 } from 'uuid';
 import globalVars from "../../globalVars";
 const candidatesURL: string = globalVars.API_DOMAIN + "/election/candidates";
-const checkVoteURL: string = globalVars.API_DOMAIN + `/user-vote/${User.getName()}/check-vote`;
+const checkVoteURL: string = globalVars.API_DOMAIN + `/vote/${User.getName()}/check-vote`;
 
 export default function Vote(): React.ReactElement | null {
     const [hasVoted, setHasVoted] = React.useState<boolean | null>(null);

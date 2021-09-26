@@ -12,13 +12,6 @@ import java.sql.*;
 @RequestMapping(value = "/user")
 public class UserController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
-    private String test() {
-        final String s = "WORKS!";
-        System.out.println(s);
-        return s;
-    }
-
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     private ResponseEntity<Void> register(@RequestBody User user) throws Exception {
         var con = DBConnector.getCon();

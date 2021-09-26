@@ -1,9 +1,8 @@
 package com.main.backend.controllers;
 
-import com.main.backend.controllers.ElectionController;
+import com.main.backend.models.UserVote;
 import com.main.backend.util.DBConnector;
 import com.main.backend.util.TimeManager;
-import com.main.backend.models.UserVote;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 @RestController
-@RequestMapping(value = "/user-vote")
+@RequestMapping(value = "/vote")
 public class UserVoteController {
 
     @RequestMapping(value = "/add-vote", method = RequestMethod.PUT)

@@ -1,12 +1,14 @@
 import axios from "axios";
 import React from "react";
 import Modal from "../../Components/Modal/Modal";
+import PresView from "../../Components/PresView/PresView";
 import globalVars from "../../globalVars";
 const winSrc: string = window.location.search;
 const eleStatsURL = globalVars.API_DOMAIN + '/election-stats/stats' + winSrc;
 
 export default function ElectionStats(): React.ReactElement {
     const [modalShow, setModalShow] = React.useState<boolean>(false);
+    const [winner, setWinner] = React.useState<string>('');
     const [date, setDate] = React.useState<string>('');
     const [votePresence, setVotePresence] = React.useState<number>();
     const [voteDis, setVoteDis] = React.useState<string>('');
@@ -31,6 +33,16 @@ export default function ElectionStats(): React.ReactElement {
             }
             auxStr = auxStr.slice(0, -1);
             setVoteDis(auxStr);
+            //get pres
+            let maxVote: number = Number.NEGATIVE_INFINITY;
+            let winner: string = '';
+            for (const key in localVoteDis) {
+                if (localVoteDis[key] > maxVote) {
+                    maxVote = localVoteDis[key];
+                    winner = key;
+                }
+            }
+            setWinner(winner);
         }, err => {
             console.error(err);
             setModalShow(true);
@@ -49,7 +61,10 @@ export default function ElectionStats(): React.ReactElement {
                 onHide={() => setModalShow(false)}
                 data="smth went wrong!"
             />
-            <h3 style={{textDecoration: 'underline'}}>stats:</h3>
+            <br />
+            <PresView winner={winner} />
+            <br />
+            <h3 style={{ textDecoration: 'underline' }}>stats:</h3>
             <p>vote-presence: {votePresence}%</p>
             <h4>votes-distribution:</h4>
             {voteDis.split(',').map(e => {

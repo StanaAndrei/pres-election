@@ -10,7 +10,7 @@ interface CandidateData {
 }
 
 export default function CandidateView({name}: CandidateData): React.ReactElement {
-    const addVoteURL: string = globalVars.API_DOMAIN + '/user-vote/add-vote';
+    const addVoteURL: string = globalVars.API_DOMAIN + '/vote/add-vote';
 
     const handleVoteBtnClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
         e.preventDefault();
