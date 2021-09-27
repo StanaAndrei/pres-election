@@ -1,9 +1,9 @@
 import React from "react";
 import { Figure } from "react-bootstrap";
-import { ELE_RES_IMG } from "../../constants";
-import "./PresView.css";
+import { ELECTION_RESULT_IMG } from "../../constants";
+import "./PresidentView.css";
 
-export default function PresView({winner}: any): React.ReactElement {
+export default function PresidentView({winner}: any): React.ReactElement {
     console.log(winner);
     return (
         <div className='pres-view'>
@@ -12,7 +12,7 @@ export default function PresView({winner}: any): React.ReactElement {
                     width={171}
                     height={180}
                     alt="171x180"
-                    src={ELE_RES_IMG}
+                    src={ELECTION_RESULT_IMG}
                 />
                 <Figure.Caption>
                     <div id="winner">{winner}</div>

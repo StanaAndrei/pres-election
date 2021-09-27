@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
-import PresView from "../../Components/PresView/PresView";
+import PresidentView from "../../Components/PresidentView/PresidentView";
 import globalVars from "../../globalVars";
 import User from "../../Schemas/User";
 const checkPresidentURL: string = globalVars.API_DOMAIN + '/vote/president';
@@ -68,7 +68,7 @@ export default function Home(): React.ReactElement {
             <br />
             <hr />
             <div id="status">
-                <PresView winner={status} />
+                <PresidentView winner={status} />
             </div>
             <hr />
             <div id="candidate-status-area">

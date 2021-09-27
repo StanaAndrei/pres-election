@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import Modal from "../../Components/Modal/Modal";
-import PresView from "../../Components/PresView/PresView";
+import PresidentView from "../../Components/PresidentView/PresidentView";
 import globalVars from "../../globalVars";
 const winSrc: string = window.location.search;
 const eleStatsURL = globalVars.API_DOMAIN + '/election-stats/stats' + winSrc;
@@ -62,7 +62,7 @@ export default function ElectionStats(): React.ReactElement {
                 data="smth went wrong!"
             />
             <br />
-            <PresView winner={winner} />
+            <PresidentView winner={winner} />
             <br />
             <h3 style={{ textDecoration: 'underline' }}>stats:</h3>
             <p>vote-presence: {votePresence}%</p>
