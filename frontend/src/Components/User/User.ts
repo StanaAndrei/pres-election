@@ -1,6 +1,6 @@
-import { LOCAL_STORAGE_KEYS } from "../constants";
+import { LOCAL_STORAGE_KEYS } from "../../constants";
 import axios from "axios";
-import globalVars from "../globalVars";
+import globalVars from "../../globalVars";
 
 export default class User {
     static async register(name: String, password: String): Promise<boolean> {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import User from "../../Schemas/User";
-import Modal from "../../Components/Modal/Modal";
+import User from "../User";
+import Modal from "../../Modal/Modal";
 
 export default function Register(): React.ReactElement {
     let nameInpRef = React.createRef<HTMLInputElement>();

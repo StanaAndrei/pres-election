@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
-import CandidateView from "../../Components/CandidateView/CandidateView";
-import User from "../../Schemas/User";
+import CandidateView from "../CandidateView/CandidateView";
+import User from "../User/User";
 import { v4 as uuidv4 } from 'uuid';
 import globalVars from "../../globalVars";
 const candidatesURL: string = globalVars.API_DOMAIN + "/election/candidates";

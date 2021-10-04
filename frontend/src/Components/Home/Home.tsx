@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import PresidentView from "../../Components/PresidentView/PresidentView";
 import globalVars from "../../globalVars";
-import User from "../../Schemas/User";
+import User from "../User/User";
 const checkPresidentURL: string = globalVars.API_DOMAIN + '/vote/president';
 const name: string | null = User.getName();
 const isCandidateURL: string = globalVars.API_DOMAIN + `/election/${name}/is-candidate`;

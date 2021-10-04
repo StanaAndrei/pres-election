@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
 import globalVars from "../../globalVars";
-import User from "../../Schemas/User";
+import User from "../User/User";
 import "./CandidateView.css";
 
 interface CandidateData {

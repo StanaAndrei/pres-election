@@ -1,20 +1,19 @@
 import React from "react";
 import "./App.css";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Partials/Header/Header";
+import Footer from "./Components/Partials/Footer/Footer";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import Home from "./Routes/Home/Home";
-import Login from "./Routes/Login/Login";
-import Register from "./Routes/Register/Register";
-import Route404 from "./Routes/Route404/Route404";
-import Vote from "./Routes/Vote/Vote";
-import History from "./Routes/History/History";
-import ElectionStats from "./Routes/ElectionStats/ElectionStats";
-
+import Home from "./Components/Home/Home";
+import Login from "./Components/User/Login/Login";
+import Register from "./Components/User/Register/Register";
+import Vote from "./Components/Vote/Vote";
+import Route404 from "./Components/Route404/Route404";
+import ElectionStats from "./Components/ElectionStats/ElectionStats";
+import History from "./Components/History/History";
 
 export default function App(): React.ReactElement {
   return (

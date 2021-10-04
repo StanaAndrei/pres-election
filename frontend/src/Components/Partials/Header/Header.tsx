@@ -3,8 +3,8 @@ import "./Header.css";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown } from "react-bootstrap";
-import { LOCAL_STORAGE_KEYS } from "../../constants";
-import User from "../../Schemas/User";
+import { LOCAL_STORAGE_KEYS } from "../../../constants";
+import User from "../../User/User"
 
 interface AnchorData {
     href: string,
