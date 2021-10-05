@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
-import ElectionStatsView from "../../Components/ElectionStatsView/ElectionStatsView";
+import ElectionStatsView from "../ElectionStatsView/ElectionStatsView";
 import { v4 as uuidv4 } from 'uuid';
-import globalVars from "../../globalVars";
+import globalVars from "../../../globalVars";
 
 const historyURL = globalVars.API_DOMAIN + '/election-stats/history';
 

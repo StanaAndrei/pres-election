@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Button } from "react-bootstrap";
-import PresidentView from "../../Components/PresidentView/PresidentView";
+import PresidentView from "../Election/PresidentView/PresidentView";
 import globalVars from "../../globalVars";
 import User from "../User/User";
 const checkPresidentURL: string = globalVars.API_DOMAIN + '/vote/president';

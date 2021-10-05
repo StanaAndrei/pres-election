@@ -10,10 +10,10 @@ import {
 import Home from "./Components/Home/Home";
 import Login from "./Components/User/Login/Login";
 import Register from "./Components/User/Register/Register";
-import Vote from "./Components/Vote/Vote";
-import Route404 from "./Components/Route404/Route404";
-import ElectionStats from "./Components/ElectionStats/ElectionStats";
-import History from "./Components/History/History";
+import Vote from "./Components/Election/Vote/Vote";
+import Route404 from "./Components/Partials/Route404/Route404";
+import ElectionStats from "./Components/Election/ElectionStats/ElectionStats";
+import History from "./Components/Election/History/History";
 
 export default function App(): React.ReactElement {
   return (

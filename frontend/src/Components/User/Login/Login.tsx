@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import User from "../User";
-import Modal from "../../Modal/Modal";
+import Modal from "../../Partials/Modal/Modal";
 
 export default function Login(): React.ReactElement {
     let nameInpRef = React.createRef<HTMLInputElement>();

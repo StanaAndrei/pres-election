@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
-import Modal from "../../Components/Modal/Modal";
-import PresidentView from "../../Components/PresidentView/PresidentView";
-import globalVars from "../../globalVars";
+import Modal from "../../Partials/Modal/Modal";
+import PresidentView from "../PresidentView/PresidentView";
+import globalVars from "../../../globalVars";
 const winSrc: string = window.location.search;
 const eleStatsURL = globalVars.API_DOMAIN + '/election-stats/stats' + winSrc;
 
